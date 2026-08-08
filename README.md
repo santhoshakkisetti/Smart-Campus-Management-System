@@ -55,4 +55,4 @@ An end-to-end server-side and workflow-driven solution built entirely inside Ser
 
 ## 🔗 Project Documentation
 * For a comprehensive deep-dive into the technical implementation, schemas, and walkthrough, check out the documentation folder in this repository:
-  👉 **[View Project Documentation PDF]([./6.%20Project%20Documentation/ServiceNow_Capstone_Documentation.pdf](https://github.com/santhoshakkisetti/Smart-Campus-Management-System/blob/main/6.%20Project%20Documentation/ServiceNow_Capstone_Documentation().pdf))**
+  👉 **[View Project Documentation PDF]([[./6.%20Project%20Documentation/ServiceNow_Capstone_Documentation.pdf](https://github.com/santhoshakkisetti/Smart-Campus-Management-System/blob/main/6.%20Project%20Documentation/ServiceNow_Capstone_Documentation().pdf)](https://github.com/santhoshakkisetti/Smart-Campus-Management-System/blob/main/6.%20Project%20Documentation/ServiceNow_Capstone_Documentation().pdf))**
