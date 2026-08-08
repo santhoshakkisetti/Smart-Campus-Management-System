@@ -205,4 +205,4 @@ Last Updated: August 2026
 
 Version: 1.0
 
-Repository: Smart-Campus-Management-System-in-ServiceNow
+Repository: [Smart-Campus-Management-System-in-ServiceNow](https://github.com/santhoshakkisetti/Smart-Campus-Management-System/tree/main)
