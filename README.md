@@ -1,58 +1,187 @@
-# 🎓 Smart Campus Management System (SCMS)
+Smart Campus Management System in ServiceNow
 
-> An enterprise-grade automation and university administration solution built on the ServiceNow platform (Vancouver Release).
+Overview
 
----
+The Smart Campus Management System (SCMS) is a comprehensive ServiceNow-based solution designed to digitize academic and administrative campus workflows. This project implements an intelligent platform that automates the process of creating, processing, and managing student requests, faculty leave, course enrollments, and facility complaints within the ServiceNow platform.
 
-## 🚀 Overview
+Project Objectives
 
-The Smart Campus Management System replaces fragmented administrative paperwork and manual workflows with a centralized, secure self-service platform. Designed within an isolated scoped application container, the system seamlessly handles relational academic records, automated operational requests, and real-time administrative analytics.
+* Digitize academic and administrative campus workflows for students and faculty
+* Improve operational efficiency through automated request routing and multi-stage approvals
+* Enhance service quality by ensuring timely request resolution and status tracking
+* Provide real-time visibility into campus metrics and operational data
+* Reduce manual intervention in campus lifecycle management
 
----
+Key Features
 
-## 🛠️ Problem Statement & Architecture
+* **Scoped Application Architecture:** Isolated application scope (`x_scms_smart_campus`) to securely manage master and transactional data
+* **Service Portal & Catalog:** Intuitive self-service interface for submitting academic requests, course registrations, and facility issues
+* **Automated Workflows:** Flow Designer integration for multi-stage approval processes and task routing
+* **Data Integrity & Scripts:** Client-side validations via UI policies/scripts and server-side business rules with reusable script includes
+* **Reporting & Dashboards:** Comprehensive dashboards and reporting capabilities tracking complaints, leave requests, and enrollments
+* **Security & Access Control:** Granular role-based security using Access Control Lists (ACLs) for students, faculty, and administrators
 
-### **The Problem**
-Traditional campus management relies on disconnected spreadsheets and manual data entry, leading to data silos, delays in student leave/complaint processing, and a lack of centralized operational oversight.
+Technology Stack
 
-### **The Solution**
-An end-to-end server-side and workflow-driven solution built entirely inside ServiceNow:
-* **Scoped Application Isolation:** Securely housed within namespace `x_2065601_smart_0` to ensure proper data encapsulation and namespace integrity.
-* **Relational Data Schema:** Structured master and transactional tables linking departments, courses, students, faculty, enrollments, and operational complaints.
-* **Automated Processing:** Dynamic UI policies, data-integrity business rules, and asynchronous Flow Designer workflows.
+* **Platform:** ServiceNow Platform as a Service (PaaS)
+* **Languages:** JavaScript, Glide Script, HTML/CSS (Service Portal)
+* **Architecture:** Scoped Application Model
 
----
+Project Phases
 
-## 📂 Core Architecture & Components
+1. Ideation Phase
 
-### **1. Data Model (Tables)**
-* **Academic Master Tables:** Departments, Courses, Students, Faculty.
-* **Operational Transactional Tables:** Course Enrollments, Leave Requests, Facility Complaints.
+Conceptualization and initial requirements gathering for the smart campus management platform.
 
-### **2. Logic & Automation**
-* **Script Includes (`scmsutils`):** Reusable backend scripts handling server-side processing and data validation.
-* **Client Scripts & UI Policies:** Real-time form validations and dynamic field visibility rules.
-* **Auto-Numbering Generators:** Systematic tracking IDs for complaints and requests.
+2. Requirement Analysis
 
-### **3. Service Portal & Workflows**
-* **Service Catalog:** User-friendly self-service portal landing page (`Smart Campus Services`) for students and faculty.
-* **Flow Designer:** Automated multi-step approval routing and automated email status notifications.
+Detailed analysis of functional and non-functional requirements from student and administrative stakeholders.
 
----
+3. Project Design Phase
 
-## 📊 Administrative Dashboards & Reporting
-* Real-time graphical reporting tracking:
-  * Course enrollment trends across academic terms.
-  * Open leave request backlogs.
-  * Facility complaint distributions by category.
+System architecture, custom database table design, and technical specifications.
 
----
+4. Project Planning Phase
 
-## 📦 Project Deployment
-* Packaged completely as a standard ServiceNow **Update Set**, ensuring seamless migration and deployment across instances.
+Project timeline, resource allocation, and milestone definition across development phases.
 
----
+5. Project Development Phase
 
-## 🔗 Project Documentation
-* For a comprehensive deep-dive into the technical implementation, schemas, and walkthrough, check out the documentation folder in this repository:
-  👉 **[View Project Documentation PDF]([[./6.%20Project%20Documentation/ServiceNow_Capstone_Documentation.pdf](https://github.com/santhoshakkisetti/Smart-Campus-Management-System/blob/main/6.%20Project%20Documentation/ServiceNow_Capstone_Documentation().pdf)](https://github.com/santhoshakkisetti/Smart-Campus-Management-System/blob/main/6.%20Project%20Documentation/ServiceNow_Capstone_Documentation().pdf))**
+Implementation of core features, Service Portal widgets, UI policies, business rules, and Flow Designer workflows.
+
+6. Project Documentation
+
+Comprehensive documentation including technical project reports, repository structures, and user guides.
+
+7. Project Demonstration
+
+Demo scripts, test cases, and presentation materials showcasing system capabilities and end-to-end execution.
+
+Installation & Setup
+
+Prerequisites
+
+* ServiceNow developer or enterprise instance
+* Administrative access to the ServiceNow platform
+* Basic understanding of ServiceNow scoped apps, Flow Designer, and Service Portal tables
+
+Deployment Steps
+
+* **Access your ServiceNow instance:** Navigate to your designated instance URL.
+* **Import the application:** Navigate to System Applications > Studio or import the application package via update sets.
+* **Configure system settings:** Set up application properties, user roles, and access control lists.
+* **Configure workflow rules and business logic:** Set up Flow Designer triggers and server-side business rules.
+* **Test the system:** Create test student/faculty profiles, submit sample requests, and verify automation workflows.
+
+Usage
+
+Creating a Request
+
+* Navigate to the Smart Campus Service Portal.
+* Select a catalog item (e.g., Course Registration, Leave Application, Facility Maintenance).
+* Fill in required fields (details, department, date ranges).
+* System automatically triggers appropriate approval workflows and routing.
+* Track request status through the portal dashboard.
+
+Dashboard Features
+
+* Real-time campus request metrics and volume trends
+* Department-wise breakdown of student and faculty submissions
+* Facility complaint resolution time tracking
+* Active enrollment and leave tracking analytics
+
+Architecture
+
+```
+┌─────────────────────────────────────────────┐
+│       ServiceNow Platform                   │
+├─────────────────────────────────────────────┤
+│  Application Scope: x_scms_smart_campus     │
+├─────────────────────────────────────────────┤
+│  Workflow & Automation Layer                │
+│  ├─ Flow Designer Approvals                 │
+│  ├─ Business Rules & Script Includes        │
+│  └─ Client Scripts & UI Policies            │
+├─────────────────────────────────────────────┤
+│  Data Modeling Layer                        │
+│  ├─ Master Tables (Students, Faculty, etc.) │
+│  └─ Transactional Tables (Leave, Complaints)│
+├─────────────────────────────────────────────┤
+│  Integration & Presentation Layer           │
+│  ├─ Service Portal Interface                │
+│  ├─ Analytics Engine                        │
+│  └─ Administrative Dashboards               │
+└─────────────────────────────────────────────┘
+
+```
+
+Configuration
+
+Key Configuration Areas
+
+* **Application Scopes:** Custom prefix configuration for all application artifacts
+* **Assignment Rules:** Define routing based on campus departments and request types
+* **Approval Definitions:** Set multi-stage approval matrices for faculty advisors and department heads
+* **Access Control Lists (ACLs):** Restrict table-level and field-level permissions based on user roles (Student, Faculty, Admin)
+* **Custom Fields:** Add campus-specific parameters to extend baseline record structures
+
+API Reference
+
+For detailed API documentation, refer to the ServiceNow developer documentation and the project's internal API specifications in the project documentation folder.
+
+Testing
+
+Comprehensive test cases and validation scripts are available in the project documentation folder. Test coverage includes:
+
+* Unit tests for script includes and business logic
+* Integration tests for Flow Designer multi-stage approvals
+* End-to-end request lifecycle scenarios from portal submission to closure
+* Access control and role restriction validations
+
+Troubleshooting
+
+* **Requests not triggering workflows:** Verify Flow Designer active status and trigger criteria conditions.
+* **Approval routing failures:** Check user manager/department relationships and assignment rule configurations.
+* **Portal visibility issues:** Review ACL configurations for specific table roles (Student vs. Faculty).
+* **Report discrepancies:** Clear browser and instance cache, then refresh the dashboard metrics.
+
+Support & Maintenance
+
+* **Documentation:** See the project documentation folder for detailed technical guides.
+* **Demonstrations:** Review presentation and video walkthrough materials for system execution.
+* **Issues:** Report issues through the project repository tracker.
+
+Future Enhancements
+
+* Mobile app integration for push notifications and quick campus approvals
+* AI-powered issue categorization for facility complaints and student queries
+* Advanced analytics with predictive insights for course enrollment trends
+* Multi-language support for diverse student bodies
+* IoT sensor integration for automated campus facility fault detection
+
+Contributing
+
+To contribute to this project:
+
+* Fork the repository
+* Create a feature branch
+* Make your changes within the scoped application framework
+* Submit a pull request with a detailed description of updates
+
+License
+
+This project is provided as-is for educational and smart campus administration implementations.
+
+Authors & Contributors
+
+* Project Lead: Santhosh Akkisetti
+
+Acknowledgments
+
+This project represents a comprehensive implementation of ServiceNow best practices for higher education and smart campus management systems.
+
+Last Updated: August 2026
+
+Version: 1.0
+
+Repository: Smart-Campus-Management-System-in-ServiceNow
